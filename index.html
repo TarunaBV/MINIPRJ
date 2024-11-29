@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health-Card</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header>
+        <h1>Health Card</h1>
+        <img id="medicalimg" src="medical.png" alt="">
+    </header>
+    <div class="container" id="signin">
+        <form action="connect.php" method="post">
+            <h1>Sign In</h1>
+            <div class="inputBox">
+                <input type="text" placeholder="Username" name="username" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="inputBox">
+                <input type="password" placeholder="Password" name="password" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <div class="rememberForgot">
+                <a href="#">Forgot Password</a>
+            </div>
+            <input type="submit" id="signinButton" class="btn" value="Sign In">
+            <div class="RegisterLink">
+                <p>Don't have an account ? <button type="button" id="switchToSignUp">Sign Up</button></p>
+            </div>
+        </form>
+    </div>
+    
+    <div class="container" id="signup" style="display: none;">
+        <form action="register.php" method="post">
+            <div class="inputBox">
+                <input type="text" placeholder="Full Name" name="name" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="inputBox">
+                <input type="text" placeholder="Username" name="username" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="inputBox">
+                <input type="password" placeholder="Password" name="password" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <div class="inputBox">
+                <input type="password" placeholder="Confirm Password" name="confirm_password" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <div class="inputBox">
+                <input type="email" placeholder="Email" name="email" required>
+            </div>
+            <div class="inputBox">
+                <input type="text" placeholder="Specialization" name="specialization" required>
+            </div>
+            <input type="submit" id="signupButton" class="btn" value="Sign Up">
+            <div class="RegisterLink">
+                <p>Already have an account ? <button type="button" id="switchToSignIn">Sign Up</button></p>
+            </div>
+        </form>        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

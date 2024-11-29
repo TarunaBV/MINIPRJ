@@ -1,0 +1,151 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1f1f1f, #292929);
+    color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    background: rgba(51, 51, 51, 0.9);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+    animation: slideInTop 1s ease-in-out;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+form .inputBox {
+    position: relative;
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease-in-out;
+    animation-delay: 0.3s;
+    animation-fill-mode: both;
+}
+
+form .inputBox input, 
+form .inputBox textarea, 
+form .inputBox select {
+    width: 100%;
+    padding: 15px;
+    background: rgba(68, 68, 68, 0.7);
+    border: none;
+    border-radius: 5px;
+    color: #ddd;
+    font-size: 16px;
+    resize: none;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+form .inputBox input:focus, 
+form .inputBox textarea:focus, 
+form .inputBox select:focus {
+    background: rgba(85, 85, 85, 0.8);
+}
+
+form .inputBox label {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    color: #bbb;
+    background: rgba(51, 51, 51, 0.9);
+    padding: 0 5px;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    font-size: 16px;
+}
+
+form .inputBox input:focus ~ label, 
+form .inputBox input:valid ~ label,
+form .inputBox textarea:focus ~ label, 
+form .inputBox textarea:valid ~ label, 
+form .inputBox select:focus ~ label, 
+form .inputBox select:valid ~ label {
+    top: -15px;
+    left: 20px;
+    color: #fff;
+    font-size: 12px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    animation: bounceIn 1s ease-in-out;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003d80);
+    transform: translateY(-5px);
+}
+
+.records {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.record {
+    background: rgba(68, 68, 68, 0.7);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.record-date {
+    text-align: right;
+    color: #bbb;
+    margin-bottom: 10px;
+}
+
+.record-details {
+    white-space: pre-wrap;
+    color: #ddd;
+}
+
+.record-image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInTop {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounceIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
