@@ -1,0 +1,120 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1f1f1f, #292929);
+    color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    background: rgba(51, 51, 51, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 50px;
+    animation: slideInTop 1s ease-in-out;
+    font-weight: 700;
+}
+
+form .inputBox {
+    position: relative;
+    margin-bottom: 30px;
+    margin-right: 30px;
+    animation: fadeInUp 1s ease-in-out;
+    animation-delay: 0.3s;
+    animation-fill-mode: both;
+}
+
+form .inputBox input, 
+form .inputBox select {
+    width: 100%;
+    padding: 15px 15px; /* Equal padding left and right */
+    background: rgba(68, 68, 68, 0.7);
+    border: none;
+    border-radius: 5px;
+    color: #ddd;
+    font-size: 16px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+form .inputBox input:focus,
+form .inputBox select:focus {
+    background: rgba(85, 85, 85, 0.8);
+}
+
+form .inputBox label {
+    position: absolute;
+    top: -10px; /* Move the label above the input field */
+    left: 15px; /* Ensure the label aligns properly */
+    color: #bbb;
+    background: rgba(51, 51, 51, 0.9);
+    padding: 0 5px;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    font-size: 16px;
+}
+
+form .inputBox input:focus ~ label,
+form .inputBox input:valid ~ label,
+form .inputBox select:focus ~ label,
+form .inputBox select:valid ~ label {
+    top: -30px; /* Keep the label above */
+    left: 15px;
+    color: #fff;
+    font-size: 12px;
+}
+
+form .inputBox input[type="date"]:valid + label,
+form .inputBox input[type="date"]:focus + label {
+    top: -30px; /* Ensure correct positioning for date input */
+    left: 15px;
+    color: #fff;
+    font-size: 12px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    animation: bounceIn 1s ease-in-out;
+}
+
+.btn:hover {
+    background: #0056b3;
+    transform: translateY(-5px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInTop {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounceIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
