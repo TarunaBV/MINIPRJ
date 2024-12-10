@@ -37,7 +37,6 @@ $conn->close();
 <body>
     <header class="header" onclick="toggleDetails()">
         <div class="header-content">
-            <img src="path/to/profile-pic.jpg" alt="Profile Picture" class="profile-pic">
             <h1>Welcome, Dr. <?php echo htmlspecialchars($doctor['name']); ?>!</h1>
         </div>
     </header>
@@ -54,11 +53,10 @@ $conn->close();
             </div>
         </div>
         <div class="action-buttons">
-    <a href="register_patient.php" class="btn">Register a Patient</a>
-    <a href="update_patient.php" class="btn">Update Patient's Record</a>
-    <a href="view_patient_records.php" class="btn">View Patient's Records</a>
-</div>
-
+            <a href="register_patient.php" class="btn">Register a Patient</a>
+            <a href="update_patient.php" class="btn">Update Patient's Record</a>
+            <a href="view_patient_records.php" class="btn">View Patient's Records</a>
+        </div>
     </div>
     <script src="profile.js"></script>
 </body>
