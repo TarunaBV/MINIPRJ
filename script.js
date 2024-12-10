@@ -1,14 +1,9 @@
-const switchToSignInButton = document.getElementById("switchToSignIn");
-const switchToSignUpButton = document.getElementById("switchToSignUp");
-const signinForm = document.getElementById("signin");
-const signupForm = document.getElementById("signup");
-
-switchToSignUpButton.addEventListener('click', function() {
-    signinForm.style.display = "none";
-    signupForm.style.display = "block";
+document.getElementById('switchToSignUp').addEventListener('click', function() {
+    document.getElementById('signin').style.display = 'none';
+    document.getElementById('signup').style.display = 'block';
 });
 
-switchToSignInButton.addEventListener('click', function() {
-    signinForm.style.display = "block";
-    signupForm.style.display = "none";
+document.getElementById('switchToSignIn').addEventListener('click', function() {
+    document.getElementById('signup').style.display = 'none';
+    document.getElementById('signin').style.display = 'block';
 });

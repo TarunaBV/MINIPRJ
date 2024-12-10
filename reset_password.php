@@ -1,47 +1,30 @@
 <?php
-session_start();
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "healthcardDB";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-$new_password = $_POST['new_password'];
-$confirm_password = $_POST['confirm_password'];
-
-if ($new_password == $confirm_password) {
-    $phone_number = $_SESSION['phone_number'];
-    $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
-
-    $sql = "UPDATE doctors SET password = ? WHERE phone_number = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ss", $hashed_password, $phone_number);
-    if ($stmt->execute()) {
-        echo "Password reset successfully!";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-
-    $stmt->close();
-    $conn->close();
-
-    // Clear session data
-    session_unset();
-    session_destroy();
-
-    // Redirect to login page
-    header("Location: login.html");
-    exit();
-} else {
-    // Passwords do not match, redirect back to reset password page with an error
-    header("Location: reset_password.html?error=password_mismatch");
-    exit();
-}
+$token = $_GET['token'];
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Reset Password</h2>
+        <form action="update_password.php" method="post">
+            <input type="hidden" name="token" value="<?php echo htmlspecialchars($token); ?>">
+            <div class="inputBox">
+                <input type="password" name="new_password" required>
+                <label for="new_password">New Password</label>
+            </div>
+            <div class="inputBox">
+                <input type="password" name="confirm_password" required>
+                <label for="confirm_password">Confirm Password</label>
+            </div>
+            <input type="submit" class="btn" value="Reset Password">
+        </form>
+    </div>
+</body>
+</html>
